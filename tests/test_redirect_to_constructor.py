@@ -2,13 +2,14 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from Sprint_5.tests.elements_to_find import TestLocators
+from tests.data_to_use import TestData
 
 
 class TestRedirectToConstructor:
     def test_redirect_to_constructor_from_personal_info_success(self, driver):
         driver.find_element(*TestLocators.LOG_IN_BUTTON).click()
-        driver.find_element(*TestLocators.EMAIL_2).send_keys("serafima_timkova_6_123@yandex.com")
-        driver.find_element(*TestLocators.PASSWORD_2).send_keys("tHisIS")
+        driver.find_element(*TestLocators.EMAIL_2).send_keys(TestData.EMAIL)
+        driver.find_element(*TestLocators.PASSWORD_2).send_keys(TestData.PASS)
         driver.find_element(*TestLocators.LOG_IN_BUTTON_2).click()
         driver.find_element(*TestLocators.PERSONAL_INFO).click()
         driver.find_element(*TestLocators.CONSTRUCTOR).click()
@@ -17,8 +18,8 @@ class TestRedirectToConstructor:
 
     def test_redirect_to_constructor_via_logo_success(self, driver):
         driver.find_element(*TestLocators.LOG_IN_BUTTON).click()
-        driver.find_element(*TestLocators.EMAIL_2).send_keys("serafima_timkova_6_123@yandex.com")
-        driver.find_element(*TestLocators.PASSWORD_2).send_keys("tHisIS")
+        driver.find_element(*TestLocators.EMAIL_2).send_keys(TestData.EMAIL)
+        driver.find_element(*TestLocators.PASSWORD_2).send_keys(TestData.PASS)
         driver.find_element(*TestLocators.LOG_IN_BUTTON_2).click()
         driver.find_element(*TestLocators.PERSONAL_INFO).click()
         driver.find_element(*TestLocators.LOGO).click()
